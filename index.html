@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            height: 100vh;
+            overflow-x: auto;
+            white-space: nowrap;
+            overflow-y: hidden;
+        }
+
+        div {
+            margin-left: 50px;
+            margin: 500px;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: rgb(0, 132, 255);
+            padding: 4px 8px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            left: 0%; /* 처음에는 화면 오른쪽 밖에 위치 */
+        }
+
+        .div18 {
+            color: #f0f0f0;
+        }
+
+        .div54 {
+            color: #f0f0f0;
+        }
+
+        .fixed-square {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border: 2px dotted black;
+        }
+
+        .textDisplay {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: rgb(0, 132, 255);
+            display: none;
+        }
+
+        #textDisplay1 {
+            top: 20px; /* 첫 번째 텍스트의 위치 */
+        }
+        #textDisplay2 {
+            top: 40px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay3 {
+            top: 60px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay4 {
+            top: 80px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay5 {
+            top: 100px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay6 {
+            top: 120px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay7 {
+            top: 140px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay8 {
+            top: 160px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay9 {
+            top: 180px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay10 {
+            top: 200px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay11 {
+            top: 220px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay12 {
+            top: 240px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay13 {
+            top: 260px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay14 {
+            top: 280px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay15 {
+            top: 300px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay16 {
+            top: 320px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay17 {
+            top: 340px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay18 {
+            top: 360px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay19 {
+            top: 380px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay20 {
+            top: 400px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay21 {
+            top: 420px; /* 첫 번째 텍스트의 위치 */
+        }
+        #textDisplay22 {
+            top: 440px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay23 {
+            top: 460px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay24 {
+            top: 480px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay25 {
+            top: 500px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay26 {
+            top: 520px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay27 {
+            top: 540px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay28 {
+            top: 560px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay29 {
+            top: 580px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay30 {
+            top: 600px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+
+        #textDisplay31 {
+            top: 620px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay32 {
+            top: 640px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay33 {
+            top: 660px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay34 {
+            top: 680px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+        #textDisplay35 {
+            top: 700px; /* 두 번째 텍스트의 위치 (첫 번째보다 아래) */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="div1">✦</div>
+    <div class="div2">🞼</div>
+    <div class="div1">✦</div>
+    <div class="div2">🞼</div>
+    <div class="div1">✦</div>
+    <div class="div2">🞼</div>
+    <div class="div1">✦</div>
+    <div class="div2">🞼</div>
+    <div class="div1">✦</div>
+    <div class="div2">🞼</div>
+    <div class="div3">🞼</div>
+    <div class="div1">✦</div>
+    <div class="div2">🞼</div>
+    <div class="div3">🞼</div>
+    <div class="div4">✷</div>
+    <div class="div5">✷</div>
+    <div class="div6">✷</div>
+    <div class="div7">✷</div>
+    <div class="div1">✦</div>
+    <div class="div2">🞼</div>
+    <div class="div3">🞼</div>
+    <div class="div4">✷</div>
+    <div class="div5">✷</div>
+    <div class="div6">✷</div>
+    <div class="div7">✷</div>
+    <div class="div8">✷</div>
+    <div class="div9">✷</div>
+    <div class="div10">✷</div>
+    <div class="div11">✷</div>
+    <div class="div12">✷</div>
+    <div class="div13">✷</div>
+    <div class="div14">✷</div>
+    <div class="div15">✷</div>
+    <div class="div16">✷</div>
+    <div class="div17">✷</div>
+    <div class="div18">✷</div>
+    <div class="div19">✷</div>
+    <div class="div20">✷</div>
+    <div class="div21">✷</div>
+    <div class="div22">✷</div>
+    <div class="div23">✷</div>
+    <div class="div24">✷</div>
+    <div class="div25">✷</div>
+    <div class="div26">✷</div>
+    <div class="div27">✷</div>
+    <div class="div28">✷</div>
+    <div class="div29">✷</div>
+    <div class="div30">✷</div>
+    <div class="div31">✷</div>
+    <div class="div32">✷</div>
+    <div class="div33">✷</div>
+    <div class="div34">✷</div>
+    <div class="div35">✷</div>
+    <div class="div36">✷</div>
+    <div class="div37">✷</div>
+    <div class="div38">✷</div>
+    <div class="div39">✷</div>
+    <div class="div40">✷</div>
+    <div class="div41">✷</div>
+    <div class="div42">✷</div>
+    <div class="div43">✷</div>
+    <div class="div44">✷</div>
+    <div class="div45">✷</div>
+    <div class="div46">✷</div>
+    <div class="div47">✷</div>
+    <div class="div48">✷</div>
+    <div class="div49">✷</div>
+    <div class="div50">✷</div>
+    <div class="div51">✷</div>
+    <div class="div52">✷</div>
+    <div class="div53">✷</div>
+    <div class="div54">✷</div>
+
+</div>
+
+
+    
+    <section class="fixed-square"></section>
+
+    <!-- 텍스트 표시 영역 추가 -->
+    <span id="textDisplay1" class="textDisplay">커튼 동그라미들의 빛</span>
+    <span id="textDisplay2" class="textDisplay">보도블럭 위 그림자의 빛</span>
+    <span id="textDisplay3" class="textDisplay">빨간 엄지의 빛</span>
+    <span id="textDisplay4" class="textDisplay">입술에 바른 바세린의 빛</span>
+    <span id="textDisplay5" class="textDisplay">잔액을 확인하는 교통카드의 빛</span>
+    <span id="textDisplay6" class="textDisplay">버스에 앉은 빛나는 얼굴</span>
+    <span id="textDisplay7" class="textDisplay">빛나는 얼굴을 바라보는 얼굴의 빛</span>
+    <span id="textDisplay8" class="textDisplay">눈동자 속 두 개의 빛</span>
+    <span id="textDisplay9" class="textDisplay">버스에 앉은 빛나는 얼굴</span>
+    <span id="textDisplay10" class="textDisplay">마주하게 되는 카메라 렌즈의 빛</span>
+    <span id="textDisplay11" class="textDisplay">몸 전체에 터지는 빛</span>
+    <span id="textDisplay12" class="textDisplay">등 뒤 책의 노란 빛</span>
+    <span id="textDisplay13" class="textDisplay">차려진 밥상 위로 퍼지는 빛</span>
+    <span id="textDisplay14" class="textDisplay">작은 노래를 흥얼거리는 목소리의 희미한 빛</span>
+    <span id="textDisplay15" class="textDisplay">한주머니에 넣은 두 손의 빛</span>
+    <span id="textDisplay16" class="textDisplay">밥솥에서 나는 향기의 빛</span>
+    <span id="textDisplay17" class="textDisplay">디지몬과 포켓몬의 빛</span>
+    <span id="textDisplay18" class="textDisplay">꼭 안은 인형과 가슴 사이에 새어나오는 빛</span>
+    <span id="textDisplay19" class="textDisplay">서로를 발견한 두 눈의 빛</span>
+    <span id="textDisplay20" class="textDisplay">같은 이어폰으로 연결된 두 귀의 빛</span>
+    <span id="textDisplay21" class="textDisplay">웃는 입꼬리의 빛</span>
+    <span id="textDisplay22" class="textDisplay">끝없는 머리카락뭉치의 빛</span>
+    <span id="textDisplay23" class="textDisplay">깜깜한 방의 네모난 빛</span>
+    <span id="textDisplay24" class="textDisplay">초록과 파랑의 빛</span>
+    <span id="textDisplay25" class="textDisplay">나란히 앉은 몸의 빛</span>
+    <span id="textDisplay26" class="textDisplay">혼자 움직이는 그네의 빛</span>
+    <span id="textDisplay27" class="textDisplay">그래도 무언가를 듣는 귀의 빛</span>
+    <span id="textDisplay28" class="textDisplay">채워지는 벽의 빛</span>
+    <span id="textDisplay29" class="textDisplay">지워지는 화이트보드의 빛</span>
+    <span id="textDisplay30" class="textDisplay">어깨 위 잠드는 점심 오후의 빛</span>
+    <span id="textDisplay31" class="textDisplay">눈을 덮은 눈꺼풀의 빛</span>
+    <span id="textDisplay32" class="textDisplay">서랍 속 수건의 빛</span>
+    <span id="textDisplay33" class="textDisplay">기억하는 빛</span>
+    <span id="textDisplay34" class="textDisplay">변화하는 빛</span>
+    <span id="textDisplay35" class="textDisplay">존재하는 빛</span>
+
+
+
+
+    <script>
+        const texts = [
+            { div: '.div19', textId: '#textDisplay1' },
+            { div: '.div20', textId: '#textDisplay2' },
+            { div: '.div21', textId: '#textDisplay3' },
+            { div: '.div22', textId: '#textDisplay4' },
+            { div: '.div23', textId: '#textDisplay5' },
+            { div: '.div24', textId: '#textDisplay6' },
+            { div: '.div25', textId: '#textDisplay7' },
+            { div: '.div26', textId: '#textDisplay8' },
+            { div: '.div27', textId: '#textDisplay9' },
+            { div: '.div28', textId: '#textDisplay10' },
+            { div: '.div29', textId: '#textDisplay11' },
+            { div: '.div30', textId: '#textDisplay12' },
+            { div: '.div31', textId: '#textDisplay13' },
+            { div: '.div32', textId: '#textDisplay14' },
+            { div: '.div33', textId: '#textDisplay15' },
+            { div: '.div34', textId: '#textDisplay16' },
+            { div: '.div35', textId: '#textDisplay17' },
+            { div: '.div36', textId: '#textDisplay18' },
+            { div: '.div37', textId: '#textDisplay19' },
+            { div: '.div38', textId: '#textDisplay20' },
+            { div: '.div39', textId: '#textDisplay21' },
+            { div: '.div40', textId: '#textDisplay22' },
+            { div: '.div41', textId: '#textDisplay23' },
+            { div: '.div42', textId: '#textDisplay24' },
+            { div: '.div43', textId: '#textDisplay25' },
+            { div: '.div44', textId: '#textDisplay26' },
+            { div: '.div45', textId: '#textDisplay27' },
+            { div: '.div46', textId: '#textDisplay28' },
+            { div: '.div47', textId: '#textDisplay29' },
+            { div: '.div48', textId: '#textDisplay30' },
+            { div: '.div49', textId: '#textDisplay31' },
+            { div: '.div50', textId: '#textDisplay32' },
+            { div: '.div51', textId: '#textDisplay33' },
+            { div: '.div52', textId: '#textDisplay34' },
+            { div: '.div53', textId: '#textDisplay35' },
+            { div: '.div54', textId: '#textDisplay32' },
+            { div: '.div55', textId: '#textDisplay33' },
+            { div: '.div56', textId: '#textDisplay34' },
+            { div: '.div57', textId: '#textDisplay34' }
+     
+
+
+
+
+        ];
+
+        const fixedSquare = document.querySelector('.fixed-square');
+        const divs = document.querySelectorAll('div');
+
+        // 겹침 여부 체크 및 텍스트 표시 함수
+        function checkOverlapAndShowText(div, textDisplay) {
+            const divRect = div.getBoundingClientRect();
+            const fixedSquareRect = fixedSquare.getBoundingClientRect();
+
+            // 겹쳤을 때 텍스트 표시
+            if (divRect.top < fixedSquareRect.top + fixedSquareRect.height &&
+                divRect.bottom > fixedSquareRect.top &&
+                divRect.left < fixedSquareRect.left + fixedSquareRect.width &&
+                divRect.right > fixedSquareRect.left) {
+                textDisplay.style.display = 'block';
+
+                // 배경색을 노란색으로 변경
+                div.style.backgroundColor = 'rgb(255, 255, 0)';
+            } else {
+                // 겹치지 않으면 배경색 원래대로
+                div.style.backgroundColor = '';
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            // 모든 div의 opacity 설정
+            divs.forEach((div, index) => {
+                div.style.opacity = window.scrollX > index * 1 ? 1 : 0;
+            });
+
+            // 텍스트 표시 확인 및 배경색 변경
+            texts.forEach(({ div, textId }) => {
+                const targetDiv = document.querySelector(div);
+                const textDisplay = document.querySelector(textId);
+                checkOverlapAndShowText(targetDiv, textDisplay);
+            });
+        });
+    </script>
+</body>
+</html>
